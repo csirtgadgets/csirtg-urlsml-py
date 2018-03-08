@@ -1,0 +1,2 @@
+include versioneer.py
+include csirtg_urlsml/_version.py
