@@ -110,7 +110,7 @@ def main():
 
     if args.indicator:
         feats = _extract_features(args.indicator)
-        feats = np.array(feats, dtype=int)
+        feats = np.array([feats], dtype=int)
         p = classifier.predict(feats)
         print(p)
 
