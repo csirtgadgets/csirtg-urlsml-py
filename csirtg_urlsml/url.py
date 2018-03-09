@@ -120,7 +120,7 @@ def predict(u, classifier):
         u = urlparse(u)
 
     feats = _extract_features(u)
-    feats = np.array(feats, dtype=int)
+    feats = np.array([feats], dtype=int)
     return classifier.predict(feats)
 
 
