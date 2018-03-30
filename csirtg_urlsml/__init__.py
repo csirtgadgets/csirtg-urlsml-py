@@ -9,7 +9,8 @@ from .constants import PYVERSION
 me = os.path.dirname(__file__)
 
 MODEL = os.getenv('CSIRTG_URLSML_MODEL', '%s/../data/model.pickle' % me)
-
+if PYVERSION == 2:
+    MODEL = os.getenv('CSIRTG_URLSML_MODEL', '%s/../data/py2model.pickle' % me)
 
 CLS = None
 if os.path.exists(MODEL):
