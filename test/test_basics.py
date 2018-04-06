@@ -48,7 +48,7 @@ def _stats(u, inverse=False):
 
 
 def test_urls_basic():
-    assert _stats(URLS) >= .9
+    assert _stats(URLS) >= .8
 
 
 def test_urls_random():
