@@ -27,7 +27,8 @@ if sys.argv[-1] == 'test':
 data_files = [
     'data/whitelist.txt',
     'data/blacklist.txt',
-    'data/model.pickle'
+    'data/model.pickle',
+    'data/model_py2.pickle'
 ]
 
 setup(
@@ -38,7 +39,7 @@ setup(
     long_description="",
     url="https://github.com/csirtgadgets/csirtg-urlsml-py",
     license='MPLv2',
-    data_files=[('data', data_files)],
+    data_files=[(os.path.join('csirtg_urlsml', 'data'), data_files)],
     keywords=['network', 'security'],
     author="Wes Young",
     author_email="wes@barely3am.com",
@@ -46,7 +47,8 @@ setup(
     install_requires=[
         'scikit-learn>=0.19,<0.20',
         'numpy',
-        'scipy'
+        'scipy',
+        'csirtg_domainsml'
     ],
     entry_points={
        'console_scripts': [

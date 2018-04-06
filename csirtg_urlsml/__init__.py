@@ -8,19 +8,12 @@ from .constants import PYVERSION
 import sys
 
 
-me = os.path.dirname(__file__)
-
-MODEL = os.getenv('CSIRTG_URLSML_MODEL', '%s/../data/model.pickle' % me)
-if PYVERSION == 2:
-    MODEL = os.getenv('CSIRTG_URLSML_MODEL', '%s/../data/py2model.pickle' % me)
-
-
 MODEL = 'model.pickle'
 if PYVERSION == 2:
-    MODEL = 'py2model.pickle'
+    MODEL = 'model_py2.pickle'
 
-if os.path.exists(os.path.join(sys.prefix, 'csirtg_urlsml/data', MODEL)):
-    MODEL = os.path.join(sys.prefix, 'csirtg_urlsml/data', MODEL)
+if os.path.exists(os.path.join(sys.prefix, 'csirtg_urlsml', 'data', MODEL)):
+    MODEL = os.path.join(sys.prefix, 'csirtg_urlsml', 'data', MODEL)
 else:
     MODEL = os.path.join('%s/../data/%s' % (os.path.dirname(__file__), MODEL))
 
