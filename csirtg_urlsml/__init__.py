@@ -14,6 +14,10 @@ if PYVERSION == 2:
 
 if os.path.exists(os.path.join(sys.prefix, 'csirtg_urlsml', 'data', MODEL)):
     MODEL = os.path.join(sys.prefix, 'csirtg_urlsml', 'data', MODEL)
+
+elif os.path.exists(os.path.join('usr', 'local',  'csirtg_urlsml', 'data', MODEL)):
+    MODEL = os.path.join('usr', 'local',  'csirtg_urlsml', 'data', MODEL)
+
 else:
     MODEL = os.path.join('%s/../data/%s' % (os.path.dirname(__file__), MODEL))
 
